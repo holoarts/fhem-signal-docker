@@ -1,0 +1,50 @@
+
+# This is an exmaple Docker Compose file to start your own Docker Stack
+
+version: '2.3'
+
+services:
+
+  fhem:
+    hostname: fhemsignal
+    container_name: fhem_signal
+#    image: fhem/fhem:bullseye
+    build: .
+    restart: always
+    tty: true
+    stdin_open: true
+    networks:
+      - fhem-network
+    ports:
+      - "8083:8083"
+      - "7072:7072"
+    volumes:
+      - "./fhem/:/opt/fhem/"
+      - "./signal/:/var/lib/signal-cli/"
+      - "./docker/:/docker/"
+      
+#    devices:
+#      - "/dev/ttyUSB0:/dev/ttyUSB0"
+
+    environment:
+      FHEM_UID: 1000
+      FHEM_GID: 1000
+      FHEMUSER: fhem
+      FHEMGROUP: fhem
+      TIMEOUT: 10
+      RESTART: 1
+      TELNETPORT: 7072
+      TZ: Europe/Berlin
+
+networks:
+  fhem-network:
+    driver: bridge
+    # enable_ipv6: true
+    # ipam:
+      # driver: default
+      # config:
+        # - subnet: 172.27.0.0/24
+          # gateway: 172.27.0.1
+        # # - subnet: fd00:0:0:0:27::/80
+        # #   gateway: fd00:0:0:0:27::1
+
