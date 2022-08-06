@@ -1,4 +1,5 @@
 FROM ghcr.io/fhem/fhem/fhem-docker:bullseye
+
 MAINTAINER holoarts<holoarts@yahoo.com>
 
 ENV DEBIAN_FRONTEND noninteractive
@@ -23,9 +24,6 @@ RUN cpan install Protocol::DBus
 
 COPY org.asamk.Signal.conf /etc/dbus-1/system.d/org.asamk.Signal.conf
 COPY org.asamk.Signal.service /usr/share/dbus-1/system-services/org.asamk.Signal.service
-#COPY signal.service /etc/systemd/system
-
-COPY signal_start.sh /opt/signal/
-RUN chmod a+x /opt/signal/signal_start.sh
+COPY pre-start.sh /docker/
 
 # End Dockerfile
