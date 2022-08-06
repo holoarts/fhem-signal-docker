@@ -16,7 +16,7 @@ The original fhem/fhem-docker image is used, see the documentation at https://gi
 ## more info
 
 See the FHEM Wiki (German) for the usage of Signalbot.
-https://wiki.fhem.de/wiki/Signalbot
+http://wiki.fhem.de/wiki/Signalbot
 
 See FHEM Forum (German) for more details
 https://forum.fhem.de/index.php/topic,118370.0.html

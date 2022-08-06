@@ -21,7 +21,6 @@ services:
     volumes:
       - "./fhem/:/opt/fhem/"
       - "./signal/:/var/lib/signal-cli/"
-      - "./docker/:/docker/"
       
 #    devices:
 #      - "/dev/ttyUSB0:/dev/ttyUSB0"
