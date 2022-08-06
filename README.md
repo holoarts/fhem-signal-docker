@@ -26,4 +26,4 @@ This extension is based on the work of https://github.com/bublath/FHEM-Signalbot
 
 For source and license of the lib libsignal_jni.so see
 https://github.com/signalapp/libsignal-client
-
+ 
