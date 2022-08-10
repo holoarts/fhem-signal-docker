@@ -1,6 +1,6 @@
 # Extension for FHEM-docker installation to communicate with Signal
 
-Files to build a docker image with Signal support via Signalbot (Integration for signal messenger) and signal-cli (https://github.com/AsamK/signal-cli). At the moment it only tested on a Rapberrypi and will work only on ARM cpus.
+Files to build a docker image with Signal support via Signalbot (Integration for signal messenger) and signal-cli (https://github.com/AsamK/signal-cli). At the moment it only tested on a Rapberrypi (ARM). On x86 architure use Dockerfile.x86 .
 
 The original fhem/fhem-docker image is used, see the documentation at https://github.com/fhem/fhem-docker/ . 
 
