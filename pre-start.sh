@@ -24,7 +24,7 @@ echo -n "Waiting for dbus to become ready."
 
 echo "Starting signal_cli"
 chown fhem.fhem /var/lib/signal-cli                               
-sudo -u fhem /opt/signal/bin/signal-cli --config /var/lib/signal-cli daemon --system  >/var/log/signal.log 2>/var/log/signal.err &
+sudo -u fhem /opt/signal/bin/signal-cli --config /var/lib/signal-cli daemon --system  >>/var/log/signal.log 2>>/var/log/signal.err &
 echo -n "Waiting for signal-cli to become ready."
     WAIT='grep -i "DBus daemon running" /var/log/signal.err' 
     CHECK=`grep -i "DBus daemon running" /var/log/signal.err`
